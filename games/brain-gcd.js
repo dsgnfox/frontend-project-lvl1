@@ -3,9 +3,6 @@ import askQuestion from '../src/cli.js';
 import * as functions from '../src/functions.js';
 import * as constants from '../src/constants.js';
 
-const MIN_RANDOM_NUMBER = 1;
-const MAX_RANDOM_NUMBER = 100;
-
 let name = '';
 
 const correctAnswerCount = 0;
@@ -18,8 +15,8 @@ const playGame = (count) => {
     return undefined;
   }
 
-  const num1 = functions.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const num2 = functions.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+  const num1 = functions.getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER);
+  const num2 = functions.getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER);
   const correctAnswer = functions.getGcd(num1, num2);
 
   const answer = askQuestion(`Question: ${num1} ${num2}\nYour answer: `);

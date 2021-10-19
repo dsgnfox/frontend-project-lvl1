@@ -3,9 +3,6 @@ import askQuestion from '../src/cli.js';
 import * as functions from '../src/functions.js';
 import * as constants from '../src/constants.js';
 
-const MIN_RANDOM_NUMBER = 1;
-const MAX_RANDOM_NUMBER = 10;
-
 const operators = [
   {
     sign: '+',
@@ -34,8 +31,8 @@ const playGame = (count) => {
   }
 
   const operatorsIndex = functions.getRandomNumber(0, operators.length - 1);
-  const num1 = functions.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const num2 = functions.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+  const num1 = functions.getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER);
+  const num2 = functions.getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER);
   const correctAnswer = operators[operatorsIndex].method(num1, num2);
 
   const answer = askQuestion(`Question: ${num1} ${operators[operatorsIndex].sign} ${num2}\nYour answer: `);
