@@ -5,9 +5,6 @@ import * as constants from '../src/constants.js';
 
 let name = '';
 
-const MIN_PROGERSION_LENGTH = 5;
-const MAX_PROGERSION_LENGTH = 10;
-
 const correctAnswerCount = 0;
 
 const playGame = (count) => {
@@ -18,21 +15,15 @@ const playGame = (count) => {
     return undefined;
   }
 
-  const progression = functions.createProgression(
-    functions.getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER),
-    functions.getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER),
-    functions.getRandomNumber(MIN_PROGERSION_LENGTH, MAX_PROGERSION_LENGTH),
+  const number = functions.getRandomNumber(
+    constants.MIN_RANDOM_NUMBER,
+    constants.MAX_RANDOM_NUMBER,
   );
+  const correctAnswer = functions.isPrime(number) ? 'yes' : 'no';
 
-  const answerIndex = functions.getRandomNumber(
-    constants.MIN_RANDOM_NUMBER, progression.length - 2,
-  );
-  const correctAnswer = progression[answerIndex];
-  progression[answerIndex] = '..';
+  const answer = askQuestion(`Question: ${number}\nYour answer: `);
 
-  const answer = askQuestion(`Question: ${progression.join(' ')}\nYour answer: `);
-
-  switch (parseInt(answer, 10)) {
+  switch (answer) {
     case correctAnswer:
       console.log('Correct!');
       playGame(correctCount += 1);
@@ -41,12 +32,11 @@ const playGame = (count) => {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       break;
   }
-
   return undefined;
 };
 
 console.log('Welcome to the Brain Games!');
 name = askQuestion('May I have your name? ');
 console.log(`Hello, ${name}!`);
-console.log('What number is missing in the progression?');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 playGame(correctAnswerCount);
