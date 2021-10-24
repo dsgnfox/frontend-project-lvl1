@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { createGame } from '../index.js';
+import createGame from '../index.js';
 
 const COUNT_RIGHT_ANSWER = 3;
 const MIN_RANDOM_NUMBER = 1;
@@ -21,12 +21,12 @@ const questions = [];
 const correctAnswers = [];
 
 for (let i = 0; i < COUNT_RIGHT_ANSWER; i += 1) {
-  const index = getRandomNumber(MIN_RANDOM_NUMBER, MAX_PROGERSION_LENGTH - 1);
   const progression = createProgression(
     getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER),
     getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER),
-    getRandomNumber(MIN_PROGERSION_LENGTH, MAX_PROGERSION_LENGTH)
-  )
+    getRandomNumber(MIN_PROGERSION_LENGTH, MAX_PROGERSION_LENGTH),
+  );
+  const index = getRandomNumber(MIN_RANDOM_NUMBER, progression.length - 1);
   correctAnswers.push(progression[index].toString());
   progression[index] = '..';
   questions.push(progression.join(' '));
@@ -35,5 +35,5 @@ for (let i = 0; i < COUNT_RIGHT_ANSWER; i += 1) {
 createGame(
   'What number is missing in the progression?',
   questions,
-  correctAnswers
+  correctAnswers,
 );

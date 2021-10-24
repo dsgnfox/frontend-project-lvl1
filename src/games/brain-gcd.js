@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { createGame } from '../index.js';
+import createGame from '../index.js';
 
 const COUNT_RIGHT_ANSWER = 3;
 const MIN_RANDOM_NUMBER = 1;
@@ -21,11 +21,11 @@ for (let i = 0; i < COUNT_RIGHT_ANSWER; i += 1) {
   const number1 = getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
   const number2 = getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
   questions.push(`${number1} ${number2}`);
-  correctAnswers.push( getGcd(number1, number2).toString());
+  correctAnswers.push(getGcd(number1, number2).toString());
 }
 
 createGame(
   'Find the greatest common divisor of given numbers.',
   questions,
-  correctAnswers
+  correctAnswers,
 );

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { createGame } from '../index.js';
+import createGame from '../index.js';
 
 const COUNT_RIGHT_ANSWER = 3;
 const MIN_RANDOM_NUMBER = 1;
@@ -35,5 +35,5 @@ for (let i = 0; i < COUNT_RIGHT_ANSWER; i += 1) {
 createGame(
   'What is the result of the expression?',
   questions,
-  correctAnswers
+  correctAnswers,
 );
