@@ -6,16 +6,54 @@
 # Games
 
 ### Brain even
-[![asciicast](https://asciinema.org/a/4c5GjxGIXDuOtSBX7czw4Cv1K.svg)](https://asciinema.org/a/4c5GjxGIXDuOtSBX7czw4Cv1K)
+
+```bash
+make install
+npm link
+brain-even
+```
+[![asciicast](https://asciinema.org/a/saj3uix9EkYUDzLMUrnZCpeBt.svg)](https://asciinema.org/a/saj3uix9EkYUDzLMUrnZCpeBt)
+
+---
 
 ### Brain calc
-[![asciicast](https://asciinema.org/a/s5z7bFPOLIGtKv29PoCDQvtsD.svg)](https://asciinema.org/a/s5z7bFPOLIGtKv29PoCDQvtsD)
+
+```bash
+make install
+npm link
+brain-calc
+```
+[![asciicast](https://asciinema.org/a/UPPUjKplhIhd0ZjEW3I4vxirb.svg)](https://asciinema.org/a/UPPUjKplhIhd0ZjEW3I4vxirb)
+
+---
 
 ### Brain gcd
-[![asciicast](https://asciinema.org/a/AKZKTXoc0MJKDv0hGoPep9FQo.svg)](https://asciinema.org/a/AKZKTXoc0MJKDv0hGoPep9FQo)
+
+```bash
+make install
+npm link
+brain-gcd
+```
+[![asciicast](https://asciinema.org/a/fyUzpZ4fpD1lyNu06yL0CGnbj.svg)](https://asciinema.org/a/fyUzpZ4fpD1lyNu06yL0CGnbj)
+
+---
+
 
 ### Brain progression
-[![asciicast](https://asciinema.org/a/fS78TfhMpm4FHp16xJd2L9ZZ2.svg)](https://asciinema.org/a/fS78TfhMpm4FHp16xJd2L9ZZ2)
+
+```bash
+make install
+npm link
+brain-progression
+```
+[![asciicast](https://asciinema.org/a/u1lAiXngDl6qMaRwyZrT4FGLa.svg)](https://asciinema.org/a/u1lAiXngDl6qMaRwyZrT4FGLa)
+
+---
 
 ### Brain prime
-[![asciicast](https://asciinema.org/a/KZKWIMiSmBRS4hMo3a6QP0qb6.svg)](https://asciinema.org/a/KZKWIMiSmBRS4hMo3a6QP0qb6)
+```bash
+make install
+npm link
+brain-prime
+```
+[![asciicast](https://asciinema.org/a/smO0Nt8S4xtNZEApMTmvKkXE4.svg)](https://asciinema.org/a/smO0Nt8S4xtNZEApMTmvKkXE4)

@@ -1,14 +1,8 @@
-#!/usr/bin/env node
+import * as constants from '../constants.js';
+import getRandomNumber from '../functions.js';
 import createGame from '../index.js';
 
-const COUNT_RIGHT_ANSWER = 3;
-const MIN_RANDOM_NUMBER = 1;
-const MAX_RANDOM_NUMBER = 10;
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-const questions = [];
-const correctAnswers = [];
+const questionsAndAnswers = [];
 const operators = [
   {
     sign: '+',
@@ -24,16 +18,18 @@ const operators = [
   },
 ];
 
-for (let i = 0; i < COUNT_RIGHT_ANSWER; i += 1) {
+for (let i = 0; i < constants.COUNT_RIGHT_ANSWER; i += 1) {
   const operatorsIndex = getRandomNumber(0, operators.length - 1);
-  const num1 = getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  const num2 = getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  questions.push(`${num1} ${operators[operatorsIndex].sign} ${num2}`);
-  correctAnswers.push(operators[operatorsIndex].method(num1, num2).toString());
+  const num1 = getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER);
+  const num2 = getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER);
+  const question = `${num1} ${operators[operatorsIndex].sign} ${num2}`;
+  const answer = operators[operatorsIndex].method(num1, num2).toString();
+  questionsAndAnswers.push([question, answer]);
 }
 
-createGame(
-  'What is the result of the expression?',
-  questions,
-  correctAnswers,
-);
+export default () => {
+  createGame(
+    'What is the result of the expression?',
+    questionsAndAnswers,
+  );
+};

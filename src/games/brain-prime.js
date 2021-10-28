@@ -1,11 +1,6 @@
-#!/usr/bin/env node
+import * as constants from '../constants.js';
+import getRandomNumber from '../functions.js';
 import createGame from '../index.js';
-
-const COUNT_RIGHT_ANSWER = 3;
-const MIN_RANDOM_NUMBER = 1;
-const MAX_RANDOM_NUMBER = 100;
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const isPrime = (number) => {
   for (let i = 2, s = Math.sqrt(number); i <= s; i += 1) {
@@ -14,17 +9,17 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-const questions = [];
-const correctAnswers = [];
+const questionsAndAnswers = [];
 
-for (let i = 0; i < COUNT_RIGHT_ANSWER; i += 1) {
-  const number = getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-  questions.push(number);
-  correctAnswers.push(isPrime(number) ? 'yes' : 'no');
+for (let i = 0; i < constants.COUNT_RIGHT_ANSWER; i += 1) {
+  const question = getRandomNumber(constants.MIN_RANDOM_NUMBER, constants.MAX_RANDOM_NUMBER);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  questionsAndAnswers.push([question, answer]);
 }
 
-createGame(
-  'Answer "yes" if given number is prime. Otherwise answer "no".',
-  questions,
-  correctAnswers,
-);
+export default () => {
+  createGame(
+    'Answer "yes" if given number is prime. Otherwise answer "no".',
+    questionsAndAnswers,
+  );
+};
