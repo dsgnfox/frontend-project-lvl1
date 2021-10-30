@@ -1,7 +1,8 @@
 ### Hexlet tests and linter status:
 
-[![Actions Status](https://github.com/dsgnfox/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dsgnfox/frontend-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Actions Status](https://github.com/dsgnfox/frontend-project-lvl1/workflows/Node_CI/badge.svg)](https://github.com/dsgnfox/frontend-project-lvl1/actions/CI.yml)
+[![Actions Status](https://github.com/dsgnfox/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dsgnfox/frontend-project-lvl1/actions//hexlet-check.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b65fe300ba1062f6c51a/maintainability)](https://codeclimate.com/github/dsgnfox/frontend-project-lvl1/maintainability)
 
 # Games
 

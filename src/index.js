@@ -1,4 +1,3 @@
-import * as constants from './constants.js';
 import askQuestion from './cli.js';
 
 export default (description, questionsAndAnswers) => {
@@ -7,18 +6,15 @@ export default (description, questionsAndAnswers) => {
   console.log(`Hello, ${name}!`);
   console.log(description);
 
-  let i = 0;
-  while (i < questionsAndAnswers.length) {
-    const answer = askQuestion(`Question: ${questionsAndAnswers[i][0]}\nYour answer: `);
-    if (answer === questionsAndAnswers[i][1]) {
-      i += 1;
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${questionsAndAnswers[i][1]}'.\nLet's try again, ${name}!`);
+  /* eslint-disable-next-line */
+  for (const questionAndAnswer of questionsAndAnswers) {
+    const [question, answer] = questionAndAnswer;
+    const userAnswer = askQuestion(`Question: ${question}\nYour answer: `);
+    if (userAnswer !== answer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${name}!`);
       return;
     }
+    console.log('Correct!');
   }
-  if (i === constants.COUNT_RIGHT_ANSWER) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  console.log(`Congratulations, ${name}!`);
 };

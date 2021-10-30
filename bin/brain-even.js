@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../src/games/brain-even.js';
+import createGame from '../src/games/brain-even.js';
 
-playGame();
+createGame();
