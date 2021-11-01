@@ -1,13 +1,13 @@
 import askQuestion from './cli.js';
 
-export default (description, questionsAndAnswers) => {
+export default (gameRules, roundsData) => {
   console.log('Welcome to the Brain Games!');
   const name = askQuestion('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log(description);
+  console.log(gameRules);
 
   /* eslint-disable-next-line */
-  for (const questionAndAnswer of questionsAndAnswers) {
+  for (const questionAndAnswer of roundsData) {
     const [question, answer] = questionAndAnswer;
     const userAnswer = askQuestion(`Question: ${question}\nYour answer: `);
     if (userAnswer !== answer) {
